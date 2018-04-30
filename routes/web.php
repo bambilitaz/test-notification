@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/feed/basic', function () {
+    return view('feed-basic');
+});
+
+Route::get('/feed/full', function () {
+    return view('feed-full');
+});
