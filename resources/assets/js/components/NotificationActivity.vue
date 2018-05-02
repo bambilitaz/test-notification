@@ -27,8 +27,9 @@
 					<input type="radio" value="COMMENT" v-model="typeObject">
 					<label>Comment</label>
 					<div v-if="typeObject == 'COMMENT'">
-						<input type="text" v-model="objectId" placeholder="Comment ID">
-						of Topic <input type="text" v-model="targetId" placeholder="Topic ID">
+						<input type="text" v-model="objectId" placeholder="Comment ID"><br>
+						of Topic <br>
+						<input type="text" v-model="targetId" placeholder="Topic ID">
 					</div>
 				</div>
 				<div v-else-if="optionSelect == 'follow'">
@@ -111,20 +112,23 @@ export default {
 			if(this.optionSelect == 'follow') {
 				this.typeTarget = "PROFILE"
 				this.typeObject = "PROFILE"
+				this.topicTitle = null
 			}else if(this.optionSelect == 'promote'){
 				this.typeObject = "TOPIC"
 				this.typeTarget = "TOPIC"
+				this.actorId = "System"
 			}else {
 				this.typeTarget = "TOPIC"
 			}
 			axios.post('/api/push' ,{
-				notiId : 66,
+				notiId : 99,
 				data : {
 					actor : this.actorId,
 					verb : this.optionSelect,
 					object : this.typeObject + ":" + this.objectId,
 					target : this.typeTarget + ":" + this.targetId
 				},
+
 				actorImg : this.imgUrl,
 				actorName : this.username,
 				targetTitle : this.topicTitle

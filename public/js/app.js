@@ -53126,6 +53126,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -53176,20 +53177,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			if (this.optionSelect == 'follow') {
 				this.typeTarget = "PROFILE";
 				this.typeObject = "PROFILE";
+				this.topicTitle = null;
 			} else if (this.optionSelect == 'promote') {
 				this.typeObject = "TOPIC";
 				this.typeTarget = "TOPIC";
+				this.actorId = "System";
 			} else {
 				this.typeTarget = "TOPIC";
 			}
 			axios.post('/api/push', {
-				notiId: 66,
+				notiId: 99,
 				data: {
 					actor: this.actorId,
 					verb: this.optionSelect,
 					object: this.typeObject + ":" + this.objectId,
 					target: this.typeTarget + ":" + this.targetId
 				},
+
 				actorImg: this.imgUrl,
 				actorName: this.username,
 				targetTitle: this.topicTitle
@@ -53413,7 +53417,10 @@ var render = function() {
                         }
                       }
                     }),
+                    _c("br"),
                     _vm._v("\n\t\t\t\t\tof Topic "),
+                    _c("br"),
+                    _vm._v(" "),
                     _c("input", {
                       directives: [
                         {

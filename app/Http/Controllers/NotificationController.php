@@ -46,23 +46,29 @@ class NotificationController extends Controller
         // // $object = explode(":", $notificationData->data->object);
         // // $target = explode(":", $notificationData->data->target);
         $userFeedData = [
-            'actor' => $notificationData->data->actor,
-            'verb' => $notificationData->data->verb,
-            'object' => $notificationData->data->object,
-            'target' => $notificationData->data->target
+            'actor' => $notificationData['data']['actor'],
+            'verb' => $notificationData['data']['verb'],
+            'object' => $notificationData['data']['object'],
+            'target' => $notificationData['data']['target']
         ];
 
-        if (isset($notificationData->full->actorImg) && isset($notificationData->full->actorName) && isset($notificationData->full->targetTitle)) {
-            $userFeedData['actorImg'] = $notificationData->full->actorImg;
-            $userFeedData['actorName'] = $notificationData->full->actorName;
-            $userFeedData['targetTitle'] = $notificationData->full->targetTitle;
+        if (isset($notificationData['actorImg'])) {
+            $userFeedData['actorImg'] = $notificationData['actorImg'];
+        }
+
+        if (isset($notificationData['actorName'])) {
+            $userFeedData['actorName'] = $notificationData['actorName'];
+        }
+
+        if (isset($notificationData['targetTitle'])) {
+            $userFeedData['targetTitle'] = $notificationData['targetTitle'];
         }
 
         try {
-            $userFeed = FeedManager::getClient()->feed('notification', $notificationData->notiId);
+            $userFeed = FeedManager::getClient()->feed('notification', $notificationData['notiId']);
             $userFeed->addActivity($userFeedData);
 
-            dd($userFeed);
+            return 'success';
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
