@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('bell', require('./components/Bell.vue'));
+Vue.component('noti-activity', require('./components/NotificationActivity.vue'));
 
 const app = new Vue({
     el: '#app'

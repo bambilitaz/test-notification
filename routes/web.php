@@ -22,3 +22,11 @@ Route::get('/feed/basic', function () {
 Route::get('/feed/full', function () {
     return view('feed-full');
 });
+
+Route::get('/add/basic', function () {
+    return view('add-noti-basic');
+});
+
+Route::get('/add/full', function () {
+    return view('add-noti-full');
+});

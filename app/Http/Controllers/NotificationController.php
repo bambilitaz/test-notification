@@ -9,14 +9,14 @@ use FeedManager, Request, Response, View;
 class NotificationController extends Controller
 {
 	/**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		// $this->middleware('auth');
+	}
 
 	public function _idValidator(array $data)
 	{
@@ -36,14 +36,12 @@ class NotificationController extends Controller
 		}
 
 		$feed = FeedManager::getNotificationFeed($userId);
-        return $feed->getToken();
+		return $feed->getToken();
 	}
 
     public function pushNotification(Request $request)
     {
-        $notificationData = '{"notiId" : 99, "data" :{"actor" : 1,"verb" : "love","object" : "COMMENT:8","target" : "TOPIC:9"},"full" : {"actorImg" : "url.jpg","actorName" : "actor name","targetTitle" : "content title"}}';
-
-        $notificationData = json_decode($notificationData);
+        $notificationData = Request::except('_token');
 
         // // $object = explode(":", $notificationData->data->object);
         // // $target = explode(":", $notificationData->data->target);
@@ -75,11 +73,11 @@ class NotificationController extends Controller
         // $user = Auth::user();
         $target = \App\User::find(2);
 
-        $enricher = new Enrich();
+		$enricher = new Enrich();
 
-        $feed = FeedManager::getNotificationFeed($target->id);
-        $activities = $feed->getActivities(0,25)['results'];
-        $activities = $enricher->enrichActivities($activities);
+		$feed = FeedManager::getNotificationFeed($target->id);
+		$activities = $feed->getActivities(0,25)['results'];
+		$activities = $enricher->enrichActivities($activities);
 
         dd($feed, $activities);
     }
