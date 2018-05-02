@@ -18,3 +18,7 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/token/{userId}', 'NotificationController@genToken');
+
+Route::post('/push', 'NotificationController@pushNotification');
+
+Route::post('/getData', 'NotificationController@getData');
