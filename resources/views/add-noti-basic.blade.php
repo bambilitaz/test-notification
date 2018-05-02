@@ -8,14 +8,14 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-	<title>Notification Basic</title>
+	<title>Add Notification Basic</title>
 </head>
 <body>
 	<div id="app">
-		<h1 class="text-center mt-4">Notifications</h1>
+		<h1 class="text-center mt-4">Add Notification</h1>
 		<h5 class="text-center text-secondary mb-5">( Basic )</h5>
-		<div class="container text-center">
-			<bell type="basic"></bell>
+		<div class="container" style="width:600px;">
+			<noti-activity type="basic">
 		</div>
 	</div>
 
