@@ -27,6 +27,8 @@ class NotificationController extends Controller
 		return Validator::make($data, $validator);
 	}
 
+    //99 full 66 basic
+
 	public function genToken($userId)
 	{
 		if(!isset($userId)) {
@@ -37,27 +39,40 @@ class NotificationController extends Controller
         return $feed->getToken();
 	}
 
-    public function createNotification()
+    public function pushNotification(Request $request)
     {
-        $user = Auth::user();
-        $target = \App\User::find(2);
+        $notificationData = '{"notiId" : 99, "data" :{"actor" : 1,"verb" : "love","object" : "COMMENT:8","target" : "TOPIC:9"},"full" : {"actorImg" : "url.jpg","actorName" : "actor name","targetTitle" : "content title"}}';
 
-        $contentType = 'Topic';
-        $contentId = '123';
+        $notificationData = json_decode($notificationData);
 
-        $userFeed = FeedManager::getClient()->feed('notification', $target->id);
-        $userFeed->addActivity([
-            "actor"      => "App\User:{$target->id}",
-            "verb"       => "love",
-            "object"     => "App\$contentType:$contentId",
-        ]);
+        // // $object = explode(":", $notificationData->data->object);
+        // // $target = explode(":", $notificationData->data->target);
+        $userFeedData = [
+            'actor' => $notificationData->data->actor,
+            'verb' => $notificationData->data->verb,
+            'object' => $notificationData->data->object,
+            'target' => $notificationData->data->target
+        ];
 
-        dd($userFeed);
+        if (isset($notificationData->full->actorImg) && isset($notificationData->full->actorName) && isset($notificationData->full->targetTitle)) {
+            $userFeedData['actorImg'] = $notificationData->full->actorImg;
+            $userFeedData['actorName'] = $notificationData->full->actorName;
+            $userFeedData['targetTitle'] = $notificationData->full->targetTitle;
+        }
+
+        try {
+            $userFeed = FeedManager::getClient()->feed('notification', $notificationData->notiId);
+            $userFeed->addActivity($userFeedData);
+
+            dd($userFeed);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
     }
 
     public function getNotification()
     {
-        $user = Auth::user();
+        // $user = Auth::user();
         $target = \App\User::find(2);
 
         $enricher = new Enrich();
@@ -67,5 +82,11 @@ class NotificationController extends Controller
         $activities = $enricher->enrichActivities($activities);
 
         dd($feed, $activities);
+    }
+
+    public function getData(Request $request)
+    {
+        $data = $request->except(['_token']);
+
     }
 }
