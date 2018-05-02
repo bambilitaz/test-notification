@@ -1,18 +1,18 @@
 <template>
 <div class="notification-activity-item" :class="{'unread': !item.is_read}" @click="targetClick">
-	<div class="row">
-		<div class="col-2 pr-0 text-left">
-			<img class="avatar" v-for="(ava, index) in avatars" :key="index" :src="ava">
+	<div class="row mx-0">
+		<div class="col-2 pl-2 pr-0 text-left">
+			<img class="avatar" :src="this.item.activities[0].actorImg">
 		</div>
-		<div class="col-10 text-left">
+		<div class="col-10 px-2 text-left">
 			<div v-if="item.verb == 'follow'">
 				<strong>{{ actors }}</strong> {{ verbDisplay }}
 			</div>
 			<div v-else-if="item.verb == 'promote'">
-				"{{ item.activities[0].targetTitle }}" {{ verbDisplay }} {{ item.updated_at | moment("D MMM YYYY") }}
+				"{{ titleDisplay }}" {{ verbDisplay }} {{ item.updated_at | moment("D MMM YYYY") }}
 			</div>
 			<div v-else>
-				<strong>{{ actors }}</strong> {{ verbDisplay }} "{{ item.activities[0].targetTitle }}"
+				<strong>{{ actors }}</strong> {{ verbDisplay }} "{{ titleDisplay }}"
 			</div>
 			<small class="text-secondary">{{ item.updated_at | moment("add", "7 hours") | moment("from", "now") }}</small>
 		</div>
@@ -25,26 +25,42 @@ export default {
 	props: ['item'],
 	computed: {
 		actors() {
+			var actorList = []
+			this.item.activities.forEach( activity => {
+				if (!actorList.includes(activity.actorName)) {
+					actorList.push(activity.actorName)
+				}
+			})
+
 			var actors = ''
-			for (var i = 0; i < 3 && i < this.item.activities.length; i++){
-				var activity = this.item.activities[i]
+			for (var i = 0; i < 3 && i < actorList.length; i++){
+				var name = actorList[i]
 				if (actors == '') {
-					actors += activity.actorName
+					actors += name
 				} else {
-					actors += ', ' + activity.actorName
+					actors += ', ' + name
 				}
 			}
 
-			return actors
+			if (actorList.length > 3) {
+				return actors + ' และอีก ' + (actorList.length - 3) + 'คน'
+			} else {
+				return actors
+			}
 		},
 		avatars() {
-			var avatars = []
-			for (var i = 0; i < 3 && i < this.item.activities.length; i++){
-				var activity = this.item.activities[i]
-				avatars.push(activity.actorImg)
+			var avatarList = []
+			this.item.activities.forEach( activity => {
+				if (!avatarList.includes(activity.actorImg)) {
+					avatarList.push(activity.actorImg)
+				}
+			})
+			
+			if (avatarList.length > 3) {
+				return avatarList.slice(0, 2)
+			} else {
+				return avatarList
 			}
-
-			return avatars
 		},
 		object() {
 			return this.item.activities[0].object
@@ -60,7 +76,7 @@ export default {
 					break;
 				case 'comment':
 					if (this.item.activities[0].object.includes("COMMENT")) {
-						return 'ตอบกลับความเห็นของคุณ จาก '
+						return 'ตอบกลับความเห็นของคุณ ใน '
 					} else {
 						return 'แสดงความคิดเห็น ใน'
 					}
@@ -73,6 +89,17 @@ export default {
 					break;
 				default:
 					return this.item.verb
+			}
+		},
+		titleDisplay() {
+			if(this.item.activities[0].targetTitle) {
+				if(this.item.activities[0].targetTitle.length > 40) {
+					return this.item.activities[0].targetTitle.substr(0, 40) + '...'
+				} else {
+					return this.item.activities[0].targetTitle
+				}
+			} else {
+				return null
 			}
 		}
 	},
@@ -90,7 +117,7 @@ export default {
 	border: 1px solid #EEE;
 	margin: 5px 2px;
 	font-size: 12px;
-	padding: 5px;
+	padding: 5px 0;
 	min-height: 50px;
 	&.unread {
 		background: #c9d5dd;
@@ -101,15 +128,11 @@ export default {
 	}
 
 	.avatar {
-		width: 32px;
-		height: 32px;
+		width: 40px;
+		height: 40px;
 		border-radius: 50%;
 		border: 1px solid #EEE;
 		display: inline-block;
-
-		& + .avatar {
-			margin-left: -22px;
-		}
 	}
 }
 </style>

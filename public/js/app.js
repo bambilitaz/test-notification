@@ -32864,6 +32864,7 @@ Vue.use(__webpack_require__(190));
 Vue.component('example-component', __webpack_require__(192));
 Vue.component('bell', __webpack_require__(195));
 Vue.component('notification-activity-full', __webpack_require__(230));
+Vue.component('noti-activity', __webpack_require__(239));
 
 var app = new Vue({
   el: '#app'
@@ -66738,7 +66739,7 @@ exports = module.exports = __webpack_require__(151)(false);
 
 
 // module
-exports.push([module.i, "\n.feed {\n  position: relative;\n  background: #FCFCFC;\n  max-width: 400px;\n  margin: 20px auto;\n  border: 1px solid #DDD;\n}\n.feed:before, .feed:after {\n    content: '';\n    position: absolute;\n    border-style: solid;\n    border-width: 0px 12px 12px 12px;\n    display: block;\n    width: 0;\n    z-index: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n}\n.feed:before {\n    border-color: #DDD transparent;\n    top: -12px;\n}\n.feed:after {\n    border-color: #FCFCFC transparent;\n    top: -11px;\n}\n.bell {\n  width: 50px;\n  position: relative;\n}\n.bell .-counter {\n    width: 24px;\n    height: 24px;\n    background: #EE0022;\n    color: #FFF;\n    font-size: 14px;\n    position: absolute;\n    top: 0;\n    right: -5px;\n}\n.bell .-icon {\n    width: 100%;\n}\n.bell .-icon:hover {\n      cursor: pointer;\n}\n.bell .-icon.ringing {\n      -webkit-animation: ring 5s .8s ease-in-out infinite;\n              animation: ring 5s .8s ease-in-out infinite;\n      -webkit-transform-origin: 50% 4px;\n              transform-origin: 50% 4px;\n}\n@-webkit-keyframes ring {\n0% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n1% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n3% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n5% {\n    -webkit-transform: rotate(34deg);\n            transform: rotate(34deg);\n}\n7% {\n    -webkit-transform: rotate(-32deg);\n            transform: rotate(-32deg);\n}\n9% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n11% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n13% {\n    -webkit-transform: rotate(26deg);\n            transform: rotate(26deg);\n}\n15% {\n    -webkit-transform: rotate(-24deg);\n            transform: rotate(-24deg);\n}\n17% {\n    -webkit-transform: rotate(22deg);\n            transform: rotate(22deg);\n}\n19% {\n    -webkit-transform: rotate(-20deg);\n            transform: rotate(-20deg);\n}\n21% {\n    -webkit-transform: rotate(18deg);\n            transform: rotate(18deg);\n}\n23% {\n    -webkit-transform: rotate(-16deg);\n            transform: rotate(-16deg);\n}\n25% {\n    -webkit-transform: rotate(14deg);\n            transform: rotate(14deg);\n}\n27% {\n    -webkit-transform: rotate(-12deg);\n            transform: rotate(-12deg);\n}\n29% {\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n31% {\n    -webkit-transform: rotate(-8deg);\n            transform: rotate(-8deg);\n}\n33% {\n    -webkit-transform: rotate(6deg);\n            transform: rotate(6deg);\n}\n35% {\n    -webkit-transform: rotate(-4deg);\n            transform: rotate(-4deg);\n}\n37% {\n    -webkit-transform: rotate(2deg);\n            transform: rotate(2deg);\n}\n39% {\n    -webkit-transform: rotate(-1deg);\n            transform: rotate(-1deg);\n}\n41% {\n    -webkit-transform: rotate(1deg);\n            transform: rotate(1deg);\n}\n43% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n100% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n}\n@keyframes ring {\n0% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n1% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n3% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n5% {\n    -webkit-transform: rotate(34deg);\n            transform: rotate(34deg);\n}\n7% {\n    -webkit-transform: rotate(-32deg);\n            transform: rotate(-32deg);\n}\n9% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n11% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n13% {\n    -webkit-transform: rotate(26deg);\n            transform: rotate(26deg);\n}\n15% {\n    -webkit-transform: rotate(-24deg);\n            transform: rotate(-24deg);\n}\n17% {\n    -webkit-transform: rotate(22deg);\n            transform: rotate(22deg);\n}\n19% {\n    -webkit-transform: rotate(-20deg);\n            transform: rotate(-20deg);\n}\n21% {\n    -webkit-transform: rotate(18deg);\n            transform: rotate(18deg);\n}\n23% {\n    -webkit-transform: rotate(-16deg);\n            transform: rotate(-16deg);\n}\n25% {\n    -webkit-transform: rotate(14deg);\n            transform: rotate(14deg);\n}\n27% {\n    -webkit-transform: rotate(-12deg);\n            transform: rotate(-12deg);\n}\n29% {\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n31% {\n    -webkit-transform: rotate(-8deg);\n            transform: rotate(-8deg);\n}\n33% {\n    -webkit-transform: rotate(6deg);\n            transform: rotate(6deg);\n}\n35% {\n    -webkit-transform: rotate(-4deg);\n            transform: rotate(-4deg);\n}\n37% {\n    -webkit-transform: rotate(2deg);\n            transform: rotate(2deg);\n}\n39% {\n    -webkit-transform: rotate(-1deg);\n            transform: rotate(-1deg);\n}\n41% {\n    -webkit-transform: rotate(1deg);\n            transform: rotate(1deg);\n}\n43% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n100% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n}\n", ""]);
+exports.push([module.i, "\n.feed {\n  position: relative;\n  background: #FCFCFC;\n  max-width: 300px;\n  max-height: 360px;\n  overflow: scroll;\n  margin: 20px auto;\n  border: 1px solid #DDD;\n}\n.feed:before, .feed:after {\n    content: '';\n    position: absolute;\n    border-style: solid;\n    border-width: 0px 12px 12px 12px;\n    display: block;\n    width: 0;\n    z-index: 0;\n    left: 0;\n    right: 0;\n    margin: 0 auto;\n}\n.feed:before {\n    border-color: #DDD transparent;\n    top: -12px;\n}\n.feed:after {\n    border-color: #FCFCFC transparent;\n    top: -11px;\n}\n.bell {\n  width: 50px;\n  position: relative;\n}\n.bell .-counter {\n    width: 24px;\n    height: 24px;\n    background: #EE0022;\n    color: #FFF;\n    font-size: 14px;\n    position: absolute;\n    top: 0;\n    right: -5px;\n}\n.bell .-icon {\n    width: 100%;\n}\n.bell .-icon:hover {\n      cursor: pointer;\n}\n.bell .-icon.ringing {\n      -webkit-animation: ring 5s .8s ease-in-out infinite;\n              animation: ring 5s .8s ease-in-out infinite;\n      -webkit-transform-origin: 50% 4px;\n              transform-origin: 50% 4px;\n}\n@-webkit-keyframes ring {\n0% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n1% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n3% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n5% {\n    -webkit-transform: rotate(34deg);\n            transform: rotate(34deg);\n}\n7% {\n    -webkit-transform: rotate(-32deg);\n            transform: rotate(-32deg);\n}\n9% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n11% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n13% {\n    -webkit-transform: rotate(26deg);\n            transform: rotate(26deg);\n}\n15% {\n    -webkit-transform: rotate(-24deg);\n            transform: rotate(-24deg);\n}\n17% {\n    -webkit-transform: rotate(22deg);\n            transform: rotate(22deg);\n}\n19% {\n    -webkit-transform: rotate(-20deg);\n            transform: rotate(-20deg);\n}\n21% {\n    -webkit-transform: rotate(18deg);\n            transform: rotate(18deg);\n}\n23% {\n    -webkit-transform: rotate(-16deg);\n            transform: rotate(-16deg);\n}\n25% {\n    -webkit-transform: rotate(14deg);\n            transform: rotate(14deg);\n}\n27% {\n    -webkit-transform: rotate(-12deg);\n            transform: rotate(-12deg);\n}\n29% {\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n31% {\n    -webkit-transform: rotate(-8deg);\n            transform: rotate(-8deg);\n}\n33% {\n    -webkit-transform: rotate(6deg);\n            transform: rotate(6deg);\n}\n35% {\n    -webkit-transform: rotate(-4deg);\n            transform: rotate(-4deg);\n}\n37% {\n    -webkit-transform: rotate(2deg);\n            transform: rotate(2deg);\n}\n39% {\n    -webkit-transform: rotate(-1deg);\n            transform: rotate(-1deg);\n}\n41% {\n    -webkit-transform: rotate(1deg);\n            transform: rotate(1deg);\n}\n43% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n100% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n}\n@keyframes ring {\n0% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n1% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n3% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n5% {\n    -webkit-transform: rotate(34deg);\n            transform: rotate(34deg);\n}\n7% {\n    -webkit-transform: rotate(-32deg);\n            transform: rotate(-32deg);\n}\n9% {\n    -webkit-transform: rotate(30deg);\n            transform: rotate(30deg);\n}\n11% {\n    -webkit-transform: rotate(-28deg);\n            transform: rotate(-28deg);\n}\n13% {\n    -webkit-transform: rotate(26deg);\n            transform: rotate(26deg);\n}\n15% {\n    -webkit-transform: rotate(-24deg);\n            transform: rotate(-24deg);\n}\n17% {\n    -webkit-transform: rotate(22deg);\n            transform: rotate(22deg);\n}\n19% {\n    -webkit-transform: rotate(-20deg);\n            transform: rotate(-20deg);\n}\n21% {\n    -webkit-transform: rotate(18deg);\n            transform: rotate(18deg);\n}\n23% {\n    -webkit-transform: rotate(-16deg);\n            transform: rotate(-16deg);\n}\n25% {\n    -webkit-transform: rotate(14deg);\n            transform: rotate(14deg);\n}\n27% {\n    -webkit-transform: rotate(-12deg);\n            transform: rotate(-12deg);\n}\n29% {\n    -webkit-transform: rotate(10deg);\n            transform: rotate(10deg);\n}\n31% {\n    -webkit-transform: rotate(-8deg);\n            transform: rotate(-8deg);\n}\n33% {\n    -webkit-transform: rotate(6deg);\n            transform: rotate(6deg);\n}\n35% {\n    -webkit-transform: rotate(-4deg);\n            transform: rotate(-4deg);\n}\n37% {\n    -webkit-transform: rotate(2deg);\n            transform: rotate(2deg);\n}\n39% {\n    -webkit-transform: rotate(-1deg);\n            transform: rotate(-1deg);\n}\n41% {\n    -webkit-transform: rotate(1deg);\n            transform: rotate(1deg);\n}\n43% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n100% {\n    -webkit-transform: rotate(0);\n            transform: rotate(0);\n}\n}\n", ""]);
 
 // exports
 
@@ -69919,7 +69920,7 @@ exports = module.exports = __webpack_require__(151)(false);
 
 
 // module
-exports.push([module.i, "\n.notification-activity-item {\n  background: #FFF;\n  border: 1px solid #EEE;\n  margin: 5px 2px;\n  font-size: 12px;\n  padding: 5px;\n  min-height: 50px;\n}\n.notification-activity-item.unread {\n    background: #c9d5dd;\n}\n.notification-activity-item:hover {\n    cursor: pointer;\n}\n.notification-activity-item .avatar {\n    width: 32px;\n    height: 32px;\n    border-radius: 50%;\n    border: 1px solid #EEE;\n    display: inline-block;\n}\n.notification-activity-item .avatar + .avatar {\n      margin-left: -22px;\n}\n", ""]);
+exports.push([module.i, "\n.notification-activity-item {\n  background: #FFF;\n  border: 1px solid #EEE;\n  margin: 5px 2px;\n  font-size: 12px;\n  padding: 5px 0;\n  min-height: 50px;\n}\n.notification-activity-item.unread {\n    background: #c9d5dd;\n}\n.notification-activity-item:hover {\n    cursor: pointer;\n}\n.notification-activity-item .avatar {\n    width: 40px;\n    height: 40px;\n    border-radius: 50%;\n    border: 1px solid #EEE;\n    display: inline-block;\n}\n", ""]);
 
 // exports
 
@@ -69957,26 +69958,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	props: ['item'],
 	computed: {
 		actors: function actors() {
+			var actorList = [];
+			this.item.activities.forEach(function (activity) {
+				if (!actorList.includes(activity.actorName)) {
+					actorList.push(activity.actorName);
+				}
+			});
+
 			var actors = '';
-			for (var i = 0; i < 3 && i < this.item.activities.length; i++) {
-				var activity = this.item.activities[i];
+			for (var i = 0; i < 3 && i < actorList.length; i++) {
+				var name = actorList[i];
 				if (actors == '') {
-					actors += activity.actorName;
+					actors += name;
 				} else {
-					actors += ', ' + activity.actorName;
+					actors += ', ' + name;
 				}
 			}
 
-			return actors;
+			if (actorList.length > 3) {
+				return actors + ' และอีก ' + (actorList.length - 3) + 'คน';
+			} else {
+				return actors;
+			}
 		},
 		avatars: function avatars() {
-			var avatars = [];
-			for (var i = 0; i < 3 && i < this.item.activities.length; i++) {
-				var activity = this.item.activities[i];
-				avatars.push(activity.actorImg);
-			}
+			var avatarList = [];
+			this.item.activities.forEach(function (activity) {
+				if (!avatarList.includes(activity.actorImg)) {
+					avatarList.push(activity.actorImg);
+				}
+			});
 
-			return avatars;
+			if (avatarList.length > 3) {
+				return avatarList.slice(0, 2);
+			} else {
+				return avatarList;
+			}
 		},
 		object: function object() {
 			return this.item.activities[0].object;
@@ -69992,7 +70009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					break;
 				case 'comment':
 					if (this.item.activities[0].object.includes("COMMENT")) {
-						return 'ตอบกลับความเห็นของคุณ จาก ';
+						return 'ตอบกลับความเห็นของคุณ ใน ';
 					} else {
 						return 'แสดงความคิดเห็น ใน';
 					}
@@ -70005,6 +70022,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 					break;
 				default:
 					return this.item.verb;
+			}
+		},
+		titleDisplay: function titleDisplay() {
+			if (this.item.activities[0].targetTitle) {
+				if (this.item.activities[0].targetTitle.length > 40) {
+					return this.item.activities[0].targetTitle.substr(0, 40) + '...';
+				} else {
+					return this.item.activities[0].targetTitle;
+				}
+			} else {
+				return null;
 			}
 		}
 	},
@@ -70031,20 +70059,15 @@ var render = function() {
       on: { click: _vm.targetClick }
     },
     [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-2 pr-0 text-left" },
-          _vm._l(_vm.avatars, function(ava, index) {
-            return _c("img", {
-              key: index,
-              staticClass: "avatar",
-              attrs: { src: ava }
-            })
+      _c("div", { staticClass: "row mx-0" }, [
+        _c("div", { staticClass: "col-2 pl-2 pr-0 text-left" }, [
+          _c("img", {
+            staticClass: "avatar",
+            attrs: { src: this.item.activities[0].actorImg }
           })
-        ),
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-10 text-left" }, [
+        _c("div", { staticClass: "col-10 px-2 text-left" }, [
           _vm.item.verb == "follow"
             ? _c("div", [
                 _c("strong", [_vm._v(_vm._s(_vm.actors))]),
@@ -70054,7 +70077,7 @@ var render = function() {
               ? _c("div", [
                   _vm._v(
                     '\n\t\t\t\t"' +
-                      _vm._s(_vm.item.activities[0].targetTitle) +
+                      _vm._s(_vm.titleDisplay) +
                       '" ' +
                       _vm._s(_vm.verbDisplay) +
                       " " +
@@ -70070,7 +70093,7 @@ var render = function() {
                     " " +
                       _vm._s(_vm.verbDisplay) +
                       ' "' +
-                      _vm._s(_vm.item.activities[0].targetTitle) +
+                      _vm._s(_vm.titleDisplay) +
                       '"\n\t\t\t'
                   )
                 ]),
@@ -70106,6 +70129,676 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(240)
+}
+var normalizeComponent = __webpack_require__(14)
+/* script */
+var __vue_script__ = __webpack_require__(242)
+/* template */
+var __vue_template__ = __webpack_require__(243)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/NotificationActivity.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-61832ad1", Component.options)
+  } else {
+    hotAPI.reload("data-v-61832ad1", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(241);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(152)("44fd0ac2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61832ad1\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NotificationActivity.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-61832ad1\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NotificationActivity.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(151)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			actorId: null,
+			optionSelect: null,
+			topicId: null,
+			objectId: null,
+			targetId: null,
+			typeObject: null,
+			followUserId: null,
+			imgUrl: null,
+			username: null,
+			topicTitle: null,
+			typeTarget: null
+		};
+	},
+
+	props: ['type'],
+	methods: {
+		submit: function submit() {
+			if (this.targetId == null) {
+				this.targetId = this.objectId;
+			}
+			if (this.optionSelect == 'follow') {
+				this.typeTarget = "PROFILE";
+				this.typeObject = "PROFILE";
+			} else if (this.optionSelect == 'promote') {
+				this.typeObject = "TOPIC";
+				this.typeTarget = "TOPIC";
+			} else {
+				this.typeTarget = "TOPIC";
+			}
+			axios.post('/api/push', {
+				notiId: 66,
+				data: {
+					actor: this.actorId,
+					verb: this.optionSelect,
+					object: this.typeObject + ":" + this.objectId,
+					target: this.typeTarget + ":" + this.targetId
+				}
+			});
+		},
+		submitFull: function submitFull() {
+			if (this.targetId == null) {
+				this.targetId = this.objectId;
+			}
+			if (this.optionSelect == 'follow') {
+				this.typeTarget = "PROFILE";
+				this.typeObject = "PROFILE";
+				this.topicTitle = null;
+			} else if (this.optionSelect == 'promote') {
+				this.typeObject = "TOPIC";
+				this.typeTarget = "TOPIC";
+				this.actorId = "System";
+			} else {
+				this.typeTarget = "TOPIC";
+			}
+			axios.post('/api/push', {
+				notiId: 99,
+				data: {
+					actor: this.actorId,
+					verb: this.optionSelect,
+					object: this.typeObject + ":" + this.objectId,
+					target: this.typeTarget + ":" + this.targetId
+				},
+
+				actorImg: this.imgUrl,
+				actorName: this.username,
+				targetTitle: this.topicTitle
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "noti-activity" }, [
+    _c("div", { staticClass: "row mb-5" }, [
+      _c("div", { staticClass: "noti-actor" }, [
+        _vm._v("\n\t\t\tActor ID\n\t\t\t"),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.actorId,
+              expression: "actorId"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.actorId },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.actorId = $event.target.value
+            }
+          }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-between" }, [
+      _c("div", [
+        _c("div", { staticClass: "noti-option" }, [
+          _c("h6", [_vm._v("Select Option")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "love" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "love") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "love"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Love")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "comment" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "comment") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "comment"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Comment")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "follow" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "follow") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "follow"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("follow")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "promote" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "promote") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "promote"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Promote")]),
+          _c("br")
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm.optionSelect == "love" || _vm.optionSelect == "comment"
+          ? _c("div", { staticClass: "noti-detail" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.typeObject,
+                    expression: "typeObject"
+                  }
+                ],
+                attrs: { type: "radio", value: "TOPIC" },
+                domProps: { checked: _vm._q(_vm.typeObject, "TOPIC") },
+                on: {
+                  change: function($event) {
+                    _vm.typeObject = "TOPIC"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Topic")]),
+              _vm._v(" "),
+              _vm.typeObject == "TOPIC"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.objectId,
+                        expression: "objectId"
+                      }
+                    ],
+                    attrs: { type: "text", placeholder: "Topic ID" },
+                    domProps: { value: _vm.objectId },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.objectId = $event.target.value
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.typeObject,
+                    expression: "typeObject"
+                  }
+                ],
+                attrs: { type: "radio", value: "COMMENT" },
+                domProps: { checked: _vm._q(_vm.typeObject, "COMMENT") },
+                on: {
+                  change: function($event) {
+                    _vm.typeObject = "COMMENT"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Comment")]),
+              _vm._v(" "),
+              _vm.typeObject == "COMMENT"
+                ? _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.objectId,
+                          expression: "objectId"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Comment ID" },
+                      domProps: { value: _vm.objectId },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.objectId = $event.target.value
+                        }
+                      }
+                    }),
+                    _c("br"),
+                    _vm._v("\n\t\t\t\t\tof Topic "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.targetId,
+                          expression: "targetId"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Topic ID" },
+                      domProps: { value: _vm.targetId },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.targetId = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                : _vm._e()
+            ])
+          : _vm.optionSelect == "follow"
+            ? _c("div", [
+                _vm._v("\n\t\t\t\tUser ID "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.objectId,
+                      expression: "objectId"
+                    }
+                  ],
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.objectId },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.objectId = $event.target.value
+                    }
+                  }
+                })
+              ])
+            : _vm.optionSelect == "promote"
+              ? _c("div", [
+                  _vm._v("\n\t\t\t\tTopic ID "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.objectId,
+                        expression: "objectId"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.objectId },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.objectId = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              : _vm._e(),
+        _vm._v(" "),
+        _c("br")
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        this.type == "full"
+          ? _c("div", { staticClass: "noti-more-option" }, [
+              _c("h6", [_vm._v("More Option")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", { staticClass: "mr-5" }, [
+                  _vm._v(" Actor Image Url ")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.imgUrl,
+                        expression: "imgUrl"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.imgUrl },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.imgUrl = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", [_vm._v("Actor Username ")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.username,
+                        expression: "username"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.username },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.username = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", [_vm._v("Topic Title ")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.topicTitle,
+                        expression: "topicTitle"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.topicTitle },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.topicTitle = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("br")
+      ])
+    ]),
+    _vm._v(" "),
+    this.type == "basic"
+      ? _c(
+          "div",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function($event) {
+                _vm.submit()
+              }
+            }
+          },
+          [_vm._v("Sumbit")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    this.type == "full"
+      ? _c(
+          "div",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function($event) {
+                _vm.submitFull()
+              }
+            }
+          },
+          [_vm._v("Sumbit")]
+        )
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-61832ad1", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

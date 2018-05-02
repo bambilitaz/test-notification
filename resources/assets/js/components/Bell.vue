@@ -117,7 +117,9 @@ export default {
 .feed {
 	position: relative;
 	background: #FCFCFC;
-	max-width: 400px;
+	max-width: 300px;
+	max-height: 360px;
+	overflow: scroll;
 	margin: 20px auto;
 	border: 1px solid #DDD;
 	
