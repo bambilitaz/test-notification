@@ -53113,6 +53113,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -53194,166 +53207,56 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "noti-activity" }, [
-    _c("div", { staticClass: "noti-actor" }, [
-      _vm._v("\n\t\tActor ID\n\t\t"),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.actorId,
-            expression: "actorId"
-          }
-        ],
-        attrs: { type: "text" },
-        domProps: { value: _vm.actorId },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    _c("div", { staticClass: "row mb-5" }, [
+      _c("div", { staticClass: "noti-actor" }, [
+        _vm._v("\n\t\t\tActor ID\n\t\t\t"),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.actorId,
+              expression: "actorId"
             }
-            _vm.actorId = $event.target.value
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.actorId },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.actorId = $event.target.value
+            }
           }
-        }
-      })
+        })
+      ])
     ]),
     _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _c("div", { staticClass: "noti-option" }, [
-      _c("h6", [_vm._v("Select Option")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.optionSelect,
-            expression: "optionSelect"
-          }
-        ],
-        attrs: { type: "radio", value: "love" },
-        domProps: { checked: _vm._q(_vm.optionSelect, "love") },
-        on: {
-          change: function($event) {
-            _vm.optionSelect = "love"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "one" } }, [_vm._v("Love")]),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.optionSelect,
-            expression: "optionSelect"
-          }
-        ],
-        attrs: { type: "radio", value: "comment" },
-        domProps: { checked: _vm._q(_vm.optionSelect, "comment") },
-        on: {
-          change: function($event) {
-            _vm.optionSelect = "comment"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "one" } }, [_vm._v("Comment")]),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.optionSelect,
-            expression: "optionSelect"
-          }
-        ],
-        attrs: { type: "radio", value: "follow" },
-        domProps: { checked: _vm._q(_vm.optionSelect, "follow") },
-        on: {
-          change: function($event) {
-            _vm.optionSelect = "follow"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "one" } }, [_vm._v("follow")]),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.optionSelect,
-            expression: "optionSelect"
-          }
-        ],
-        attrs: { type: "radio", value: "promote" },
-        domProps: { checked: _vm._q(_vm.optionSelect, "promote") },
-        on: {
-          change: function($event) {
-            _vm.optionSelect = "promote"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "one" } }, [_vm._v("Promote")]),
-      _c("br")
-    ]),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    _vm.optionSelect == "love" || _vm.optionSelect == "comment"
-      ? _c("div", { staticClass: "noti-detail" }, [
+    _c("div", { staticClass: "row justify-content-between" }, [
+      _c("div", [
+        _c("div", { staticClass: "noti-option" }, [
+          _c("h6", [_vm._v("Select Option")]),
+          _vm._v(" "),
           _c("input", {
             directives: [
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.typeObject,
-                expression: "typeObject"
+                value: _vm.optionSelect,
+                expression: "optionSelect"
               }
             ],
-            attrs: { type: "radio", value: "TOPIC" },
-            domProps: { checked: _vm._q(_vm.typeObject, "TOPIC") },
+            attrs: { type: "radio", value: "love" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "love") },
             on: {
               change: function($event) {
-                _vm.typeObject = "TOPIC"
+                _vm.optionSelect = "love"
               }
             }
           }),
           _vm._v(" "),
-          _c("label", [_vm._v("Topic")]),
-          _vm._v(" "),
-          _vm.typeObject == "TOPIC"
-            ? _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.objectId,
-                    expression: "objectId"
-                  }
-                ],
-                attrs: { type: "text", placeholder: "Topic ID" },
-                domProps: { value: _vm.objectId },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.objectId = $event.target.value
-                  }
-                }
-              })
-            : _vm._e(),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Love")]),
           _c("br"),
           _vm._v(" "),
           _c("input", {
@@ -53361,23 +53264,182 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.typeObject,
-                expression: "typeObject"
+                value: _vm.optionSelect,
+                expression: "optionSelect"
               }
             ],
-            attrs: { type: "radio", value: "COMMENT" },
-            domProps: { checked: _vm._q(_vm.typeObject, "COMMENT") },
+            attrs: { type: "radio", value: "comment" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "comment") },
             on: {
               change: function($event) {
-                _vm.typeObject = "COMMENT"
+                _vm.optionSelect = "comment"
               }
             }
           }),
           _vm._v(" "),
-          _c("label", [_vm._v("Comment")]),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Comment")]),
+          _c("br"),
           _vm._v(" "),
-          _vm.typeObject == "COMMENT"
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "follow" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "follow") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "follow"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("follow")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.optionSelect,
+                expression: "optionSelect"
+              }
+            ],
+            attrs: { type: "radio", value: "promote" },
+            domProps: { checked: _vm._q(_vm.optionSelect, "promote") },
+            on: {
+              change: function($event) {
+                _vm.optionSelect = "promote"
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "one" } }, [_vm._v("Promote")]),
+          _c("br")
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm.optionSelect == "love" || _vm.optionSelect == "comment"
+          ? _c("div", { staticClass: "noti-detail" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.typeObject,
+                    expression: "typeObject"
+                  }
+                ],
+                attrs: { type: "radio", value: "TOPIC" },
+                domProps: { checked: _vm._q(_vm.typeObject, "TOPIC") },
+                on: {
+                  change: function($event) {
+                    _vm.typeObject = "TOPIC"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Topic")]),
+              _vm._v(" "),
+              _vm.typeObject == "TOPIC"
+                ? _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.objectId,
+                        expression: "objectId"
+                      }
+                    ],
+                    attrs: { type: "text", placeholder: "Topic ID" },
+                    domProps: { value: _vm.objectId },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.objectId = $event.target.value
+                      }
+                    }
+                  })
+                : _vm._e(),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.typeObject,
+                    expression: "typeObject"
+                  }
+                ],
+                attrs: { type: "radio", value: "COMMENT" },
+                domProps: { checked: _vm._q(_vm.typeObject, "COMMENT") },
+                on: {
+                  change: function($event) {
+                    _vm.typeObject = "COMMENT"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Comment")]),
+              _vm._v(" "),
+              _vm.typeObject == "COMMENT"
+                ? _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.objectId,
+                          expression: "objectId"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Comment ID" },
+                      domProps: { value: _vm.objectId },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.objectId = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v("\n\t\t\t\t\tof Topic "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.targetId,
+                          expression: "targetId"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Topic ID" },
+                      domProps: { value: _vm.targetId },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.targetId = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                : _vm._e()
+            ])
+          : _vm.optionSelect == "follow"
             ? _c("div", [
+                _vm._v("\n\t\t\t\tUser ID "),
                 _c("input", {
                   directives: [
                     {
@@ -53387,7 +53449,7 @@ var render = function() {
                       expression: "objectId"
                     }
                   ],
-                  attrs: { type: "text", placeholder: "Comment ID" },
+                  attrs: { type: "text" },
                   domProps: { value: _vm.objectId },
                   on: {
                     input: function($event) {
@@ -53397,156 +53459,130 @@ var render = function() {
                       _vm.objectId = $event.target.value
                     }
                   }
-                }),
-                _vm._v("\n\t\t\tof Topic "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.targetId,
-                      expression: "targetId"
-                    }
-                  ],
-                  attrs: { type: "text", placeholder: "Topic ID" },
-                  domProps: { value: _vm.targetId },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.targetId = $event.target.value
-                    }
-                  }
                 })
               ])
-            : _vm._e()
-        ])
-      : _vm.optionSelect == "follow"
-        ? _c("div", [
-            _vm._v("\n\t\tUser ID "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.objectId,
-                  expression: "objectId"
-                }
-              ],
-              attrs: { type: "text" },
-              domProps: { value: _vm.objectId },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.objectId = $event.target.value
-                }
-              }
-            })
-          ])
-        : _vm.optionSelect == "promote"
-          ? _c("div", [
-              _vm._v("\n\t\tTopic ID "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.objectId,
-                    expression: "objectId"
-                  }
-                ],
-                attrs: { type: "text" },
-                domProps: { value: _vm.objectId },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            : _vm.optionSelect == "promote"
+              ? _c("div", [
+                  _vm._v("\n\t\t\t\tTopic ID "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.objectId,
+                        expression: "objectId"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.objectId },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.objectId = $event.target.value
+                      }
                     }
-                    _vm.objectId = $event.target.value
-                  }
-                }
-              })
+                  })
+                ])
+              : _vm._e(),
+        _vm._v(" "),
+        _c("br")
+      ]),
+      _vm._v(" "),
+      _c("div", [
+        this.type == "full"
+          ? _c("div", { staticClass: "noti-more-option" }, [
+              _c("h6", [_vm._v("More Option")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", { staticClass: "mr-5" }, [
+                  _vm._v(" Actor Image Url ")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.imgUrl,
+                        expression: "imgUrl"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.imgUrl },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.imgUrl = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", [_vm._v("Actor Username ")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.username,
+                        expression: "username"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.username },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.username = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row justify-content-between" }, [
+                _c("div", [_vm._v("Topic Title ")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.topicTitle,
+                        expression: "topicTitle"
+                      }
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.topicTitle },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.topicTitle = $event.target.value
+                      }
+                    }
+                  })
+                ])
+              ])
             ])
           : _vm._e(),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
-    this.type == "full"
-      ? _c("div", { staticClass: "noti-more-option" }, [
-          _c("h6", [_vm._v("More Option")]),
-          _vm._v("\n\t\tActor Image Url\n\t\t"),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.imgUrl,
-                expression: "imgUrl"
-              }
-            ],
-            attrs: { type: "text" },
-            domProps: { value: _vm.imgUrl },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.imgUrl = $event.target.value
-              }
-            }
-          }),
-          _c("br"),
-          _vm._v("\n\t\tActor Username \n\t\t"),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.username,
-                expression: "username"
-              }
-            ],
-            attrs: { type: "text" },
-            domProps: { value: _vm.username },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.username = $event.target.value
-              }
-            }
-          }),
-          _c("br"),
-          _vm._v("\n\t\tTopic Title\n\t\t"),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.topicTitle,
-                expression: "topicTitle"
-              }
-            ],
-            attrs: { type: "text" },
-            domProps: { value: _vm.topicTitle },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.topicTitle = $event.target.value
-              }
-            }
-          }),
-          _c("br")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("br"),
+        _vm._v(" "),
+        _c("br")
+      ])
+    ]),
     _vm._v(" "),
     this.type == "basic"
       ? _c(

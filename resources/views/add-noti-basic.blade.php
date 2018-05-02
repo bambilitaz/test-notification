@@ -14,7 +14,7 @@
 	<div id="app">
 		<h1 class="text-center mt-4">Add Notification</h1>
 		<h5 class="text-center text-secondary mb-5">( Basic )</h5>
-		<div class="container text-center">
+		<div class="container" style="width:600px;">
 			<noti-activity type="basic">
 		</div>
 	</div>
