@@ -1,8 +1,11 @@
 <template>
 <div>
 	<div class="bell mx-auto">
-		<img class="-icon" :class="{'ringing': isRinging}" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPsQns36-cnbyIUGql0KFZcehc8TmZBZmePW96-8iN4IwA5ZiYXQ">
+		<img class="-icon" :class="{'ringing': isRinging}" @click="showList" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPsQns36-cnbyIUGql0KFZcehc8TmZBZmePW96-8iN4IwA5ZiYXQ">
 		<div v-if="counter > 0" class="-counter rounded-circle">{{ counter }}</div>
+	</div>
+	<div class="feed" v-if="isShow && list.length > 0">
+		<notification-activity-full v-for="item in list" :key="item.id" :item="item" @linkClick="markRead"></notification-activity-full>
 	</div>
 </div>
 </template>
@@ -11,58 +14,134 @@
 export default {
 	data() {
 		return {
+			userFeed: null,
 			counter: 0,
 			token: '',
-			isRinging: false
+			isRinging: false,
+			isShow: false,
+			list: [],
+			newActivities: []
 		} 
 	},
-	methods: {
-		showList() {
-			
+	computed: {
+		notificationId() {
+			return this.type == 'full' ? 99 : 66
 		}
 	},
-	mounted () {
-		//generateToken
-		axios.get('/api/token/2')
-		.then((response) => {
-			this.token = response.data
-			
-			var token = response.data
-
-			console.log('token:' + token)
-			
+	props: {
+		type: {
+			type: String,
+			default: 'full'
+		},
+	},
+	methods: {
+		subscribeFeed() {
 			var stream = require('getstream')
 			
 			var client = stream.connect('dk7dtx3p9pvv', null, '35631')
-			var user = client.feed('notification', '2', token)
+			//make instance of userFeed
+			this.userFeed = client.feed('notification', this.notificationId, this.token)
 
 			var self = this
-
 			function callback(data) {
 				console.log(data);
 				self.counter += data.new.length
 				self.isRinging = true
 				setTimeout(() => { self.isRinging = false }, 4000);
-			}
 
+				// var newData = data.new
+				// self.newActivities = newData.concat(self.newActivities)
+			}
 			function successCallback() {
 				console.log('now listening to changes in realtime')
 			}
-
 			function failCallback(data) {
 				alert('something went wrong, check the console logs')
 				console.log(data);
 			}
-
-			user.subscribe(callback).then(successCallback, failCallback)
+			this.userFeed.subscribe(callback).then(successCallback, failCallback)
+		},
+		initFeed() {
+			this.userFeed.get({limit:10})
+			.then((body) => {
+				/* on success */
+				console.log(body)
+				this.list = body.results
+				this.counter = body.unseen
+			}).catch((reason) => {
+				/* on failure, reason.error contains an explanation */
+				console.log(reason.error)
+			})
+		},
+		showList() {
+			this.isShow = !this.isShow
+			//Mark seen
+			if(this.isShow) {
+				var params = {limit:10, mark_seen: true }
+				this.userFeed.get(params)
+				.then((body) => {
+					console.log('Success! marked seen when open')
+					this.counter = 0
+					this.list = body.results
+				}).catch((reason) => {
+					console.log(reason.error)
+				})
+			}
+		},
+		markRead(id) {
+			var params = { mark_read: [id], mark_seen: [id] }
+			this.userFeed.get(params)
+			.then((body) => {
+				console.log('Success! marked seen & read')
+				this.list.find((x) => x.id == id).is_read = true
+			}).catch((reason) => {
+				console.log(reason.error)
+			})
+		}
+	},
+	mounted () {
+		//generateToken
+		axios.get('/api/token/' + this.notificationId)
+		.then((response) => {
+			this.token = response.data
+			console.log('token:' + this.token)
+			
+			this.subscribeFeed()
+			this.initFeed()
 		})
-
-		
 	}
 }
 </script>
 
 <style lang="scss">
+.feed {
+	position: relative;
+	background: #FCFCFC;
+	max-width: 400px;
+	margin: 20px auto;
+	border: 1px solid #DDD;
+	
+	&:before,&:after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-width: 0px 12px 12px 12px;
+		display: block;
+		width: 0;
+		z-index: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	&:before {
+		border-color: #DDD transparent;
+		top: -12px;
+	}
+	&:after {
+		border-color: #FCFCFC transparent;
+		top: -11px;
+	}
+}
 .bell {
 	width: 50px;
 	position: relative;
@@ -79,6 +158,9 @@ export default {
 	}
 	.-icon {
 		width: 100%;
+		&:hover {
+			cursor: pointer;
+		}
 		&.ringing {
 			animation: ring 5s .8s ease-in-out infinite;
 			transform-origin: 50% 4px;

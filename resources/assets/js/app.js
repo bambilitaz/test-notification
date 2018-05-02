@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+Vue.use(require('vue-moment'));
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -17,6 +19,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('bell', require('./components/Bell.vue'));
+Vue.component('notification-activity-full', require('./components/NotificationActivityFull.vue'));
 
 const app = new Vue({
     el: '#app'
