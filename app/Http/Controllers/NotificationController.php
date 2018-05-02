@@ -9,14 +9,14 @@ use FeedManager, Request, Response, View;
 class NotificationController extends Controller
 {
 	/**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		// $this->middleware('auth');
+	}
 
 	public function _idValidator(array $data)
 	{
@@ -34,38 +34,38 @@ class NotificationController extends Controller
 		}
 
 		$feed = FeedManager::getNotificationFeed($userId);
-        return $feed->getToken();
+		return $feed->getToken();
 	}
 
-    public function createNotification()
-    {
-        $user = Auth::user();
-        $target = \App\User::find(2);
+	public function createNotification()
+	{
+		$user = Auth::user();
+		$target = \App\User::find(2);
 
-        $contentType = 'Topic';
-        $contentId = '123';
+		$contentType = 'Topic';
+		$contentId = '123';
 
-        $userFeed = FeedManager::getClient()->feed('notification', $target->id);
-        $userFeed->addActivity([
-            "actor"      => "App\User:{$target->id}",
-            "verb"       => "love",
-            "object"     => "App\$contentType:$contentId",
-        ]);
+		$userFeed = FeedManager::getClient()->feed('notification', $target->id);
+		$userFeed->addActivity([
+			"actor"      => "App\User:{$target->id}",
+			"verb"       => "love",
+			"object"     => "App\$contentType:$contentId",
+		]);
 
-        dd($userFeed);
-    }
+		dd($userFeed);
+	}
 
-    public function getNotification()
-    {
-        $user = Auth::user();
-        $target = \App\User::find(2);
+	public function getNotification()
+	{
+		$user = Auth::user();
+		$target = \App\User::find(2);
 
-        $enricher = new Enrich();
+		$enricher = new Enrich();
 
-        $feed = FeedManager::getNotificationFeed($target->id);
-        $activities = $feed->getActivities(0,25)['results'];
-        $activities = $enricher->enrichActivities($activities);
+		$feed = FeedManager::getNotificationFeed($target->id);
+		$activities = $feed->getActivities(0,25)['results'];
+		$activities = $enricher->enrichActivities($activities);
 
-        dd($feed, $activities);
-    }
+		dd($feed, $activities);
+	}
 }
