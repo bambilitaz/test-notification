@@ -144,7 +144,7 @@ export default {
 						text += '<span><strong>' + n.actorName + '</strong> เริ่มติดตามคุณ' + '</span>'
 						break;
 					case 'promote':
-						icon = 'fire'
+						icon = 'hotjar'
 						text += '<span><strong>"' + title + '"</strong> ถูกจัดอยู่ในกลุ่ม Hot Now ประจำวัน' + '</span>'
 						break;
 					default:
@@ -155,7 +155,7 @@ export default {
 				text += '</a>'
 
 				this.$toasted.show(text, {
-					duration: 2000,
+					duration: 3000,
 					singleton: true,
 					icon: icon,
 					className: 'notification-toast-activity ' + n.verb,
@@ -229,7 +229,7 @@ export default {
 			.fa { color: #a7c1ec; }
 		}
 		&.promote {
-			.fa { color: #d2483e; }
+			.fa { color: #F79868; }
 		}
 
 		a {
