@@ -83,9 +83,7 @@ export default {
 	props: ['type'],
 	methods: {
 		submit: function() {
-			if(this.targetId == null) {
-				this.targetId = this.objectId
-			}
+			this.targetId = this.objectId
 			if(this.optionSelect == 'follow') {
 				this.typeTarget = "PROFILE"
 				this.typeObject = "PROFILE"
@@ -106,9 +104,9 @@ export default {
 			})
 		},
 		submitFull: function() {
-			if(this.targetId == null) {
+			if(this.typeObject != 'COMMENT') {
 				this.targetId = this.objectId
-			}
+			} 
 			if(this.optionSelect == 'follow') {
 				this.typeTarget = "PROFILE"
 				this.typeObject = "PROFILE"

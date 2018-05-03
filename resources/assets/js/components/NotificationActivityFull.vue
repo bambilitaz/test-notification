@@ -69,16 +69,16 @@ export default {
 			switch (this.item.verb) {
 				case 'love':
 					if (this.item.activities[0].object.includes("COMMENT")) {
-						return 'ถูกใจความเห็นของคุณ ใน '
+						return 'ถูกใจความเห็นของคุณใน '
 					} else {
 						return 'ถูกใจ'
 					}
 					break;
 				case 'comment':
 					if (this.item.activities[0].object.includes("COMMENT")) {
-						return 'ตอบกลับความเห็นของคุณ ใน '
+						return 'ตอบกลับความเห็นของคุณใน '
 					} else {
-						return 'แสดงความคิดเห็น ใน'
+						return 'แสดงความคิดเห็นใน'
 					}
 					break;
 				case 'follow':

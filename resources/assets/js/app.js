@@ -11,6 +11,11 @@ window.Vue = require('vue');
 
 Vue.use(require('vue-moment'));
 
+import Toasted from 'vue-toasted';
+Vue.use(Toasted, {
+    iconPack : 'fontawesome' // set your iconPack, defaults to material. material|fontawesome
+})
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
